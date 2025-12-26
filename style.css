@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+body{
+  background: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px;
+  text-align: left;
+}
+
+header h1 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+header h2 {
+  font-size: 15px;
+  opacity: 0.85;
+}
+main{
+  padding: 40px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 180px 100%;
+
+}
+
+#areaPesquisa{
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  height: auto;
+}
+
+#cnpj{
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+#btnPesquisar{
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#respostas{
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-left:20px ;
+}
+.hidden{
+  display: none;
+}
+@media (max-width: 500px) {
+  main{
+  padding: 10px;
+  display: inline-block;
+  width: 95%;
+  }
+  #areaPesquisa{
+  background: #ffffff;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  height: auto;
+  }
+
+  #respostas{
+  background: #ffffff;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-left:0px ;
+  margin-top: 10px;
+  }
+}
