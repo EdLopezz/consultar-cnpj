@@ -22,12 +22,11 @@ async function teste() {
 		  style: 'currency',
 		  currency: 'BRL'
 		});
-
-	console.log(valorFormatado);
-
+		console.log()
 		conteudoResp.innerHTML = `
 
-		<div>
+		<div id="novoResultado">
+			<h3><strong>Resultados</strong></h3>
 			<p><strong>Nome:</strong> ${data.razao_social}</p>
 			<p><strong>CNAE:</strong> ${data.cnae_fiscal}</p>
 			<p><strong>Descrição CNAE:</strong> ${data.cnae_fiscal_descricao}</p>
@@ -41,6 +40,21 @@ async function teste() {
 			<p><strong>Endereço:</strong> ${data.descricao_tipo_de_logradouro} ${data.logradouro}, ${data.numero} - ${data.bairro}/${data.municipio}</p>
 		</div>
 		`
+		const novoResp = document.getElementById('novoResultado')
+		if (data.qsa.length>1) {
+			const lista = data.qsa
+			lista.forEach( item => {
+				novoResp.insertAdjacentHTML('afterend', `<p><strong>Nome do Sócio:</strong> ${item.nome_socio}</p>`);
+			})
+				
+		}
+
+		const listaCNAES = data.cnaes_secundarios
+		listaCNAES.forEach( item => {
+				novoResp.insertAdjacentHTML('afterend', `<p><strong>CNAE Secundário:</strong> ${item.codigo}</p>
+														 <p><strong>Descrição:</strong> ${item.descricao}</p>`);
+		})
+
 	}catch(e){
 		conteudoResp.innerHTML = `
 		<div>
